@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:sleek/utility/app_color.dart';
 import 'package:sleek/utility/extensions.dart';
 import '../../../models/user.dart';
 import '../../../utility/constants.dart';
@@ -17,21 +18,41 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Padding(
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.symmetric(
+            horizontal: BorderSide(color: AppColor.darkGrey),
+          ),
+        ),
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            AppBarActionButton(
-              icon: Icons.menu,
-              onPressed: () {
-                final box = GetStorage();
-                Map<String, dynamic>? userJson = box.read(USER_INFO_BOX);
-                User? userLogged = User.fromJson(userJson ?? {});
-                Scaffold.of(context).openDrawer();
-              },
+            Text('Sleek'),
+            Container(
+              child: Row(
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Home'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Contact'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('About'),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text('Sign Up'),
+                  ),
+                ],
+              ),
             ),
-            Expanded(
+            Container(
+              width: 350,
               child: CustomSearchBar(
                 controller: TextEditingController(),
                 onChanged: (val) {
@@ -39,6 +60,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 },
               ),
             ),
+            Container(
+              child: Row(
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.favorite_outline),
+                  ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.shopping_cart_outlined),
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
