@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
-const MAIN_URL = 'http://192.168.1.5:5000';
-const IP = '192.168.1.5';
+const MAIN_URL = 'http://192.168.1.4:5000';
+const IP = '192.168.1.4';
 const LOCALHOST = 'localhost';
 const FAVORITE_PRODUCT_BOX = 'FAVORITE_PRODUCT_BOX';
 const USER_INFO_BOX = 'USER_INFO_BOX';
