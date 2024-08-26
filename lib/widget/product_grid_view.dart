@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:sleek/widget/proudct_card.dart';
 
 import '../models/product.dart';
 import '../screen/product_details_screen/product_detail_screen.dart';
 import '../utility/animation/open_container_wrapper.dart';
-import 'product_grid_tile.dart';
 
 class ProductGridView extends StatelessWidget {
   const ProductGridView({
@@ -23,7 +23,7 @@ class ProductGridView extends StatelessWidget {
         physics: const ScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           childAspectRatio: 10 / 16,
-          crossAxisCount: 2,
+          crossAxisCount: 4,
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
         ),
@@ -31,10 +31,15 @@ class ProductGridView extends StatelessWidget {
           Product product = items[index];
           return OpenContainerWrapper(
             nextScreen: ProductDetailScreen(product),
-            child: ProductGridTile(
-              product: product,
-              index: index,
-              isPriceOff: product.offerPrice != 0,
+            child: ProductCard(
+              imageUrl: product.images![0].url!,
+              categoryName: product.proCategoryId!.name!,
+              productName: product.name!,
+              price: product.price!,
+              discountPercentage: product.offerPrice,
+              rating: 5,
+              shortDescription: product.description,
+              currency: 'BDT ',
             ),
           );
         },

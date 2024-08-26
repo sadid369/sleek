@@ -251,6 +251,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.0.0"
+  flutter_product_card:
+    dependency: "direct main"
+    description:
+      name: flutter_product_card
+      sha256: "6c22c76226de8c4506114ed1446aeabb141f9e9b6686d272fd168ccea4c406d0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   flutter_rating_bar:
     dependency: "direct main"
     description:
@@ -272,6 +280,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_timer_countdown:
+    dependency: "direct main"
+    description:
+      name: flutter_timer_countdown
+      sha256: "0c73e1593ad7949c007752199a17e7ed50bb581568743dbc32f061f49873219e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.7"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -309,6 +325,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.4"
+  gap:
+    dependency: "direct main"
+    description:
+      name: gap
+      sha256: f19387d4e32f849394758b91377f9153a1b41d79513ef7668c088c77dbc6955d
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   get:
     dependency: "direct main"
     description:
@@ -754,6 +778,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.2"
+  timer_count_down:
+    dependency: "direct main"
+    description:
+      name: timer_count_down
+      sha256: d025d408c2654e497ca0bd4bde014bd7509d4c6397af4ed23a0f9b692bbcf337
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.2.2"
   typed_data:
     dependency: transitive
     description:

@@ -1,3 +1,11 @@
+import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
+import 'package:gap/gap.dart';
+import 'package:sleek/screen/product_list_screen/components/flash_sales.dart';
+import 'package:sleek/screen/product_list_screen/components/timer_service.dart';
+import 'package:sleek/utility/app_color.dart';
+import 'package:sleek/widget/product_list_view.dart';
+import 'package:timer_count_down/timer_count_down.dart';
+
 import '../../core/data/data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,11 +39,17 @@ class ProductListScreen extends StatelessWidget {
                 //   style: Theme.of(context).textTheme.headlineSmall,
                 // ),
                 const PosterSection(),
-                Text(
-                  "Top categories",
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
+                const Gap(100),
+                const FlashSales(),
+                const Gap(30),
                 const SizedBox(height: 5),
+                Consumer<DataProvider>(
+                  builder: (context, dataProvider, child) {
+                    return ProductListView(
+                      items: dataProvider.products,
+                    );
+                  },
+                ),
                 Consumer<DataProvider>(
                   builder: (context, dataProvider, child) {
                     return CategorySelector(
